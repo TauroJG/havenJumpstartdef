@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://benm8npl26fu1"]
+
+[ext_resource type="Script" uid="uid://w4xwy4pthwus" path="res://UpgradeMenu.gd" id="1_ntgkq"]
+
+[node name="UpgradeMenu" type="CanvasLayer" unique_id=714196919]
+script = ExtResource("1_ntgkq")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1882858984]
+offset_left = 422.0
+offset_top = 152.0
+offset_right = 766.0
+offset_bottom = 443.0
+color = Color(0.012617188, 0.004621078, 0.012617188, 0.40392157)
+
+[node name="Panel" type="Panel" parent="." unique_id=1571553907]
+offset_left = 421.0
+offset_top = 151.0
+offset_right = 766.0
+offset_bottom = 443.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=969601704]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 104.0
+offset_right = 266.0
+offset_bottom = 290.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=2123870401]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer" unique_id=1309996424]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="Panel/VBoxContainer" unique_id=1207913207]
+layout_mode = 2
+
+[node name="Button3" type="Button" parent="Panel/VBoxContainer" unique_id=1830409355]
+layout_mode = 2

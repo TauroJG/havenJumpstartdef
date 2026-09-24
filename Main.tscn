@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://qoqlqyifuqrc"]
+
+[ext_resource type="Script" uid="uid://b5sfhp5auidn2" path="res://main.gd" id="1_r0du0"]
+[ext_resource type="Texture2D" uid="uid://syghur3n81y" path="res://pastito.png" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://b5qn3oimyawoq" path="res://jugador.tscn" id="2_fos0i"]
+[ext_resource type="Texture2D" uid="uid://bl4ymn43oho53" path="res://pared.png" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://benm8npl26fu1" path="res://UpgradeMenu.tscn" id="4_cm0pq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cm0pq"]
+size = Vector2(1156.5, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fos0i"]
+size = Vector2(19.5, 647.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3dxm6"]
+size = Vector2(19, 652)
+
+[node name="Main" type="Node2D" unique_id=222514047]
+script = ExtResource("1_r0du0")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1809505980]
+offset_right = 1153.0
+offset_bottom = 648.0
+color = Color(0.31608304, 0.6354398, 0.62203586, 1)
+
+[node name="jugador" parent="." unique_id=1816753385 instance=ExtResource("2_fos0i")]
+position = Vector2(576, 568)
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=1871906442]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=807272559]
+position = Vector2(574.75, 632)
+shape = SubResource("RectangleShape2D_cm0pq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Ground" unique_id=1797177715]
+position = Vector2(576, 632)
+scale = Vector2(1.2, 0.80000097)
+texture = ExtResource("1_uu6xs")
+
+[node name="LeftWall" type="StaticBody2D" parent="." unique_id=1053402326]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall" unique_id=1428402497]
+position = Vector2(10.25, 323.75)
+shape = SubResource("RectangleShape2D_fos0i")
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftWall" unique_id=827860508]
+position = Vector2(10, 169)
+texture = ExtResource("2_r0du0")
+
+[node name="RightWall" type="StaticBody2D" parent="." unique_id=1237391254]
+position = Vector2(183, 143)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall" unique_id=744524611]
+position = Vector2(959.5, 179)
+shape = SubResource("RectangleShape2D_3dxm6")
+
+[node name="Sprite2D" type="Sprite2D" parent="RightWall" unique_id=1975048110]
+position = Vector2(960, 207)
+texture = ExtResource("2_r0du0")
+
+[node name="UpgradeMenu" parent="." unique_id=714196919 instance=ExtResource("4_cm0pq")]
+
+[node name="SpawnTimer" type="Timer" parent="." unique_id=791866631]
+wait_time = 2.1999999999999997
+one_shot = true
+autostart = true
